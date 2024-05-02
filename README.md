@@ -26,15 +26,24 @@ both looks good | ham
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/f4318afa-0079-423f-a72a-7f971f812df0)
 
-Исходя из примеров выше, можн опредположить что обычные сообщения в среднем более короткие, чем `spam` проверим, так ли это
+Исходя из примеров выше, можно предположить что обычные сообщения в среднем более короткие, чем `spam` проверим, так ли это
 
 Распределение длин сообщений в словах          |  Распределение длин сообщений в  символах
 :-------------------------:|:-------------------------:
+<img src="https://github.com/BerezinDaniil/NLP_test/assets/78606208/57826127-7746-40df-96c3-4021443b3382" width="555" /> | <img src="https://github.com/BerezinDaniil/NLP_test/assets/78606208/1774fb61-aa72-48ad-b756-00ebc6930452" width="500" />
 
-<img src="https://github.com/BerezinDaniil/NLP_test/assets/78606208/57826127-7746-40df-96c3-4021443b3382" width="300" />  |  <img src="https://github.com/BerezinDaniil/NLP_test/assets/78606208/1774fb61-aa72-48ad-b756-00ebc6930452" width="300" />
+Видим, что данная теория имеет место быть.
 
+### Models
 
-![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/57826127-7746-40df-96c3-4021443b3382) ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/1774fb61-aa72-48ad-b756-00ebc6930452)
+## Logistic Regression + EDA features
+Первую модель логистической регресии попробуем построить на 3х фичаx:
+
+ * Длина сообщения в словах
+
+ * Длина сообщения в символах
+
+ * Наличие в сообщении `$` (флаг того, что сообщение про доход и прочее )
 
 
 
