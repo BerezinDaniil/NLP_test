@@ -53,6 +53,7 @@ both looks good | ham
 
 ## Tf-idf + LogisticRegression and Naive Bayes
 Попробуем "классику" классификации спама - Naive Bayes
+
 Для векторизации сразу будем использовать `tf-idf`, перед этим преобразуем текст: 
 
  * Удаление стоп слов
@@ -68,10 +69,63 @@ both looks good | ham
 Видим, что данные визуально неплохо разделимы, что придает оптимизма) 
 
 ### Naive Bayes
+
 `Accuracy`   |  `F1` |  `AUC`
 :----:|:-----:|:-----:
 0.814 | 0.709 | 0.904|
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/1d1520e2-44ed-41e4-a392-a6d1b32ccb49)
+
+### LogisticRegression
+
+`Accuracy`   |  `F1` |  `AUC`
+:----:|:-----:|:-----:
+0.90 | 0.87 | 0.965 |
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/a41a8118-ec03-483b-9527-f7254e94b9d9)
+
+#### Shap
+
+Посмотрим на важность фич для  `LogisticRegression` с помощью библиотеки `Shap`
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/2cc4553e-3d32-46d8-833b-5f90d603a3bd)
+
+Видим множество фичей, пересекающихся с нашей гипотизой, про связь  рекламы "зароботка" и "бизнеса" - `offer`, `free`, `earn`
+А так же слова призывающие куда-то нажать - `link`,`account`, `click`, `call`
+
+### LogisticRegression + feature selection
+TO DO
+Попробуем отобраить некий топ важных для классификации слов и построить модель только на них
+
+
+## CatBoost
+
+Посмотрим, как справится с векторизацией встроенные методв `CatBoost`
+
+`Accuracy`   |  `F1` |  `AUC`
+:----:|:-----:|:-----:
+0.962 | 0.952 | 0.989 |
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/c83a5169-2526-4263-b5a5-528083005507)
+
+Получаем отличный результат - 0.989 `AUC`, кажется можно остановится, но можно ли лучше? 
+
+
+## BERT
+Для классификации будем использовать предобученную модель `distilbert` (более легковестный `BERT`)
+
+`Accuracy`   |  `F1` |  `AUC`
+:----:|:-----:|:-----:
+0.964 | 0.956 | 0.992 |
+
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/d1fe488c-53b3-4e9e-b237-b81b751b1d2b)
+
+Получаем почти идиальный результат 
+
+### Shap
+
+
+
 
 
