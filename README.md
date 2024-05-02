@@ -2,8 +2,12 @@
 
 ## Задача бинарной классификации (спам/не спам) сообщений на английском языке.
 
-#EDA
+### EDA
+
+
 Для начала посмотрим на примеры сообщейний разных классов:
+
+
  Example | Class |  
 :------------:|:------------:|
  do i require an attorney to use this system and clean up my record purge all of your card payments cancel debts and never make another payment discharge debts quickly painlessly legally for the rest of the story about canceling debt go to our elimination pages no then the link and address above king edward was engaged in earnest consultation with one of his ministers and after a look of surprise in rob s direction and a grave bow he bestowed no further attention upon the intruder but rob was not to be baffled now your majesty he interrupted i ve important news for you | spam 
@@ -15,4 +19,10 @@ here s a 4 th try rick i shall ask my assistant to schedule a meeting early next
 which cmd? | ham
 sorry about earlier putting out firesare you around to talk after 9 or do you actually have a life lol | ham
 saiman youtuber? | ham
- both looks good | ham
+both looks good | ham
+
+
+Так же взглянем на распределение по классам
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/f4318afa-0079-423f-a72a-7f971f812df0)
+
