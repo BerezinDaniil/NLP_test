@@ -28,6 +28,11 @@ both looks good | ham
 
 Исходя из примеров выше, можн опредположить что обычные сообщения в среднем более короткие, чем `spam` проверим, так ли это
 
+Распределение длин сообщений в словах          |  Распределение длин сообщений в  символах
+:-------------------------:|:-------------------------:
+
+<img src="https://github.com/BerezinDaniil/NLP_test/assets/78606208/57826127-7746-40df-96c3-4021443b3382" width="300" />  |  <img src="https://github.com/BerezinDaniil/NLP_test/assets/78606208/1774fb61-aa72-48ad-b756-00ebc6930452" width="300" />
+
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/57826127-7746-40df-96c3-4021443b3382) ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/1774fb61-aa72-48ad-b756-00ebc6930452)
 
