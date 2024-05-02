@@ -22,7 +22,14 @@ saiman youtuber? | ham
 both looks good | ham
 
 
-Так же взглянем на распределение по классам
+На распределении по классам видно, что соотношение 2 к 1 в в пользу `ham`
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/f4318afa-0079-423f-a72a-7f971f812df0)
+
+Исходя из примеров выше, можн опредположить что обычные сообщения в среднем более короткие, чем `spam` проверим, так ли это
+
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/57826127-7746-40df-96c3-4021443b3382) ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/1774fb61-aa72-48ad-b756-00ebc6930452)
+
+
 
