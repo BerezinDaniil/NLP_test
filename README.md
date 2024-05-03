@@ -1,8 +1,8 @@
 # NLP_test
 
-## Задача бинарной классификации (спам/не спам) сообщений на английском языке.
+### Задача бинарной классификации (спам/не спам) сообщений на английском языке.
 
-### EDA
+## EDA
 
 
 Для начала посмотрим на примеры сообщейний разных классов:
@@ -34,9 +34,9 @@ both looks good | ham
 
 Видим, что данная теория имеет место быть.
 
-### Models
+## Models
 
-## Logistic Regression + EDA features
+### Logistic Regression + EDA features
 Первую модель логистической регресии попробуем построить на 3х фичаx:
 
  * Длина сообщения в словах
@@ -45,13 +45,17 @@ both looks good | ham
 
  * Наличие в сообщении `$` (флаг того, что сообщение про доход и прочее )
 
+`Accuracy`   |  `F1` |  `AUC`
+:----:|:-----:|:-----:
+0.72 | 0.50 | 0.65|
+
 Результат получился лучше случайного, однако это мало )))
 
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/6342211d-21cf-4385-955e-be9292c2018d)
 
 
-## Tf-idf + LogisticRegression and Naive Bayes
+### Tf-idf + LogisticRegression and Naive Bayes
 Попробуем "классику" классификации спама - Naive Bayes
 
 Для векторизации сразу будем использовать `tf-idf`, перед этим преобразуем текст: 
@@ -68,7 +72,7 @@ both looks good | ham
 
 Видим, что данные визуально неплохо разделимы, что придает оптимизма) 
 
-### Naive Bayes
+#### Naive Bayes
 
 `Accuracy`   |  `F1` |  `AUC`
 :----:|:-----:|:-----:
@@ -76,7 +80,7 @@ both looks good | ham
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/1d1520e2-44ed-41e4-a392-a6d1b32ccb49)
 
-### LogisticRegression
+#### LogisticRegression
 
 `Accuracy`   |  `F1` |  `AUC`
 :----:|:-----:|:-----:
@@ -84,7 +88,7 @@ both looks good | ham
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/a41a8118-ec03-483b-9527-f7254e94b9d9)
 
-#### Shap
+##### Shap
 
 Посмотрим на важность фич для  `LogisticRegression` с помощью библиотеки `Shap`
 
@@ -93,12 +97,12 @@ both looks good | ham
 Видим множество фичей, пересекающихся с нашей гипотизой, про связь  рекламы "зароботка" и "бизнеса" - `offer`, `free`, `earn`
 А так же слова призывающие куда-то нажать - `link`,`account`, `click`, `call`
 
-### LogisticRegression + feature selection
+#### LogisticRegression + feature selection
 TO DO
 Попробуем отобраить некий топ важных для классификации слов и построить модель только на них
 
 
-## CatBoost
+### CatBoost
 
 Посмотрим, как справится с векторизацией встроенные методв `CatBoost`
 
@@ -111,7 +115,7 @@ TO DO
 Получаем отличный результат - 0.989 `AUC`, кажется можно остановится, но можно ли лучше? 
 
 
-## BERT
+### BERT
 Для классификации будем использовать предобученную модель `distilbert` (более легковестный `BERT`)
 
 `Accuracy`   |  `F1` |  `AUC`
@@ -123,9 +127,36 @@ TO DO
 
 Получаем почти идиальный результат 
 
-### Shap
+#### Shap
+
+Посмотрим с помощью `Shap`  какие слова в конкретных примерах больше всего влияют на решения модели 
+
+Красным обозначены слова в большей степени влияющие на пренадлежность примера к классу `spam`, синим - к классу `ham`
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/56881e77-68a5-49a8-84cf-a3a99914a7bd)
+
+Видим, что в конкретном примере слова `digital currency` и `million` стали определяющими, взглянем на еще пару примеров
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/b2bfa4fc-856c-415b-a739-d3811b29aa12)
+
+Тут ключевыми являются -  `earn`, `$10000`, `$5000`, `$` что тоже выглядит очень логично
+
+![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/e8938882-44ed-4f69-aac4-2ae170f09f33)
+
+Теперь посмотрим на пример класса `ham`
 
 
+## Conclusion
+
+Сравним качество всех методов, которые мы использовали
+
+`Model`| `Accuracy`   |  `F1` |  `AUC`
+:----:|:----:|:-----:|:-----:
+Logistic Regression + EDA features | $${\color{red}0.72}$$ | $${\color{red}0.50}$$ | $${\color{red}0.65}$$ |
+Tf-idf + Naive Bayes | $${\color{orange}0.814}$$ | $${\color{orange}0.709}$$ | $${\color{orange}0.904}$$|
+Tf-idf + LogisticRegression | $${\color{lightgreen}0.90}$$  | $${\color{lightgreen}0.87}$$ | $${\color{lightgreen}0.965}$$ |
+CatBoost |$${\color{green}0.962}$$  | $${\color{green}0.952}$$ | $${\color{green}0.989}$$ |
+BERT |$${\color{green}0.964}$$  | $${\color{green}0.956}$$ | $${\color{green}0.992}$$ |
 
 
 
