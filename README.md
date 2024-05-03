@@ -155,8 +155,8 @@ TO DO
 Logistic Regression + EDA features | $${\color{red}0.72}$$ | $${\color{red}0.50}$$ | $${\color{red}0.65}$$ |
 Tf-idf + Naive Bayes | $${\color{orange}0.814}$$ | $${\color{orange}0.709}$$ | $${\color{orange}0.904}$$|
 Tf-idf + LogisticRegression | $${\color{lightgreen}0.90}$$  | $${\color{lightgreen}0.87}$$ | $${\color{lightgreen}0.965}$$ |
-CatBoost |$${\color{green}0.962}$$  | $${\color{green}0.952}$$ | $${\color{green}0.989}$$ |
-BERT |$${\color{green}0.964}$$  | $${\color{green}0.956}$$ | $${\color{green}0.992}$$ |
+CatBoost | $${\color{green}0.962}$$  | $${\color{green}0.952}$$ | $${\color{green}0.989}$$ |
+BERT | $${\color{green}0.964}$$  | $${\color{green}0.956}$$ | $${\color{green}0.992}$$ |
 
 
 
