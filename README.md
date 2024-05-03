@@ -160,7 +160,7 @@ Tf-idf + LogisticRegression | $${\color{lightgreen}0.89}$$  | $${\color{lightgre
 CatBoost | $${\color{green}0.962}$$  | $${\color{green}0.952}$$ | $${\color{green}0.989}$$ |
 BERT | $${\color{green}0.964}$$  | $${\color{green}0.956}$$ | $${\color{green}0.992}$$ |
 
-Для финальног опредсказания будем использовать `distilbert`, так как он дал лучшую целевую метрику на тесте
+Для финального предсказания будем использовать `distilbert`, так как он дал лучшую целевую метрику на валидации
 
 
 
