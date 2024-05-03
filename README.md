@@ -84,7 +84,7 @@ both looks good | ham
 
 `Accuracy`   |  `F1` |  `AUC`
 :----:|:-----:|:-----:
-0.90 | 0.87 | 0.965 |
+0.89 | 0.86 | 0.965 |
 
 ![image](https://github.com/BerezinDaniil/NLP_test/assets/78606208/a41a8118-ec03-483b-9527-f7254e94b9d9)
 
@@ -98,8 +98,10 @@ both looks good | ham
 А так же слова призывающие куда-то нажать - `link`,`account`, `click`, `call`
 
 #### LogisticRegression + feature selection
-TO DO
-Попробуем отобраить некий топ важных для классификации слов и построить модель только на них
+
+Попробуем отобраить некий `top100` важных для классификации фичей и построить модель только на них.
+
+Таким образом мы снизили размерность эмэбингов в 435 (!!!) раз (с 43500 до 100), однако целевая матрика `AUC` просела на 0.08 0.96 -> 0.88
 
 
 ### CatBoost
@@ -154,7 +156,7 @@ TO DO
 :----:|:----:|:-----:|:-----:
 Logistic Regression + EDA features | $${\color{red}0.72}$$ | $${\color{red}0.50}$$ | $${\color{red}0.65}$$ |
 Tf-idf + Naive Bayes | $${\color{orange}0.814}$$ | $${\color{orange}0.709}$$ | $${\color{orange}0.904}$$|
-Tf-idf + LogisticRegression | $${\color{lightgreen}0.90}$$  | $${\color{lightgreen}0.87}$$ | $${\color{lightgreen}0.965}$$ |
+Tf-idf + LogisticRegression | $${\color{lightgreen}0.89}$$  | $${\color{lightgreen}0.86}$$ | $${\color{lightgreen}0.965}$$ |
 CatBoost | $${\color{green}0.962}$$  | $${\color{green}0.952}$$ | $${\color{green}0.989}$$ |
 BERT | $${\color{green}0.964}$$  | $${\color{green}0.956}$$ | $${\color{green}0.992}$$ |
 
